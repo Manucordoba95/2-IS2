@@ -44,7 +44,10 @@ public class GestionBOImpl implements IGestionBO{
        System.out.println("CREACIÓN DE ALOJAMIENTOS:");
         System.out.println("Introduzca nombre del alojamiento: ");
         String name = ioUtility.readString();
-        System.out.println(name);
+        System.out.println("¿Que tipo de alojamiento desea crear?");
+        System.out.println("1. Hotel");
+        System.out.println("2. Apartamento");
+        
     }
 
    

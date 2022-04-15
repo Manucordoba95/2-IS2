@@ -13,6 +13,7 @@ public class AlojamientoApartamentoFactoryImpl implements IAlojamientoFactory {
 
     @Override
     public void create(IPayStrategy payStrategy) {
+        
     }
 
     @Override
