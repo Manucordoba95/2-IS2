@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 import singleton.IOUtility;
 
@@ -8,9 +9,9 @@ import singleton.IOUtility;
  * @author Manuel
  */
 public class Data{
-    private List<Alojamiento> alojamientos;
-    private List<Usuario> usuarios;
-    private List<Reserva> reservas;
+    private List<Alojamiento> alojamientos = new ArrayList<>();
+    private List<Usuario> usuarios = new ArrayList<>();
+    private List<Reserva> reservas = new ArrayList<>();
 
     private static final Data dataInstance = new Data();
     
