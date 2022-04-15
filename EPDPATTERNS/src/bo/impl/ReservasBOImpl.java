@@ -4,6 +4,7 @@ import model.Data;
 import model.Reserva;
 import singleton.Log;
 import bo.IBaseBO;
+import model.Alojamiento;
 
 /**
  *
@@ -31,7 +32,19 @@ public class ReservasBOImpl implements IBaseBO<Reserva>{
 
     @Override
     public void createOrUpdate(Object object) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+                log.infoCallMethod("createOrUpdate");
+
+       Reserva aux = (Reserva) object;
+        if (aux.getId() != null) {
+            log.info("actualizamos la reserva con id:" + aux.getId());
+            int index = data.getReservas().indexOf(data.getReservas().stream().filter(a -> a.getId().equals(aux.getId())).findAny().get());
+            data.getReservas().set(index, aux);
+
+        } else {
+            log.info("creando una nueva reserva.");
+            data.getReservas().add(aux);
+
+        }
     }
     
 }

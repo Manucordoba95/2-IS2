@@ -36,6 +36,7 @@ public class AlojamientoBOImpl implements IBaseBO<Alojamiento> {
 
     @Override
     public void createOrUpdate(Object object) {
+        log.infoCallMethod("createOrUpdate");
         Alojamiento aux = (Alojamiento) object;
         if (aux.getId() != null) {
             log.info("actualizamos el alojamiento con id:" + aux.getId());
