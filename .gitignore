@@ -1,0 +1,8 @@
+*.class
+*.properties
+*.property
+.classpath
+.class
+.properties
+*.TXT
+*.xml
