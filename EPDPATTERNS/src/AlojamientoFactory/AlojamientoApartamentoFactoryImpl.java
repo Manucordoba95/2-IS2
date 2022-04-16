@@ -13,7 +13,8 @@ public class AlojamientoApartamentoFactoryImpl implements IAlojamientoFactory {
 
     @Override
     public void create(IPayStrategy payStrategy) {
-        
+        System.out.println("Factoría de creación de Apartamentos");
+        System.out.println(payStrategy.toString());
     }
 
     @Override

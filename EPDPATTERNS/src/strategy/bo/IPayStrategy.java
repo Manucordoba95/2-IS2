@@ -7,4 +7,5 @@ package strategy.bo;
 public interface IPayStrategy {
     void makePay();
     String getTypeStrategyPay();
+    
 }

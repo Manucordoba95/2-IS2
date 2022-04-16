@@ -10,7 +10,8 @@ public class AlojamientoHotelFactoryImpl implements IAlojamientoFactory {
 
     @Override
     public void create(IPayStrategy payStrategy) {
-        
+        System.out.println("Factoria creación de Hotel");
+        System.out.println(payStrategy.toString());
     }
 
     @Override
