@@ -1,5 +1,7 @@
 package AlojamientoFactory;
 
+import model.Data;
+import singleton.Log;
 import strategy.bo.IPayStrategy;
 
 /**
@@ -7,6 +9,9 @@ import strategy.bo.IPayStrategy;
  * @author Manuel
  */
 public class AlojamientoHotelFactoryImpl implements IAlojamientoFactory {
+
+    private Data data = Data.getInstance();
+    private Log log = Log.getInstance(this.getClass());
 
     @Override
     public void create(IPayStrategy payStrategy) {

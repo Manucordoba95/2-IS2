@@ -1,26 +1,27 @@
 package strategy.bo.impl;
 
+import model.Alojamiento;
+import singleton.Log;
 import strategy.bo.IPayStrategy;
 
 /**
  *
  * @author Manuel
  */
-public class MobilePayStrategy implements IPayStrategy{
+public class MobilePayStrategy implements IPayStrategy {
 
+    private Log log = Log.getInstance(this.getClass());
     @Override
-    public void makePay() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void makePay(Alojamiento alojamiento) {
+        log.info("Se va a realizar la transacción con pago de tipo móvil.");
+        
     }
 
     @Override
     public String getTypeStrategyPay() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return "MobilePayStrategy";
     }
-    
-    
-    public String toString(){
-        return this.getClass().getName();
-    }
-    
+
+   
+
 }

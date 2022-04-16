@@ -1,11 +1,13 @@
 package strategy.bo;
 
+import model.Alojamiento;
+
 /**
  *
  * @author Manuel
  */
 public interface IPayStrategy {
-    void makePay();
+    void makePay(Alojamiento alojamiento);
     String getTypeStrategyPay();
     
 }
