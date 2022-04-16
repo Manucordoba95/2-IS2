@@ -50,10 +50,7 @@ public class GestionBOImpl implements IGestionBO {
 
     @Override
     public void createAlojamiento() {
-        System.out.println("CREACIÓN DE ALOJAMIENTOS:");
-        System.out.println("Introduzca nombre del alojamiento: ");
-        String name = ioUtility.readString();
-        
+        log.info("CREACIÓN DE ALOJAMIENTOS:");
         AlojamientoFactory.getInstance(obtenerTipoAlojamiento()).create(obtenerTipoStrategyPay());
 
     }
@@ -62,9 +59,9 @@ public class GestionBOImpl implements IGestionBO {
         int opc = 0;
 
         while (opc < 1 || opc > 2) {
-            System.out.println("¿Que tipo de alojamiento desea crear?");
-            System.out.println("1. Hotel");
-            System.out.println("2. Apartamento");
+            log.info("¿Que tipo de alojamiento desea crear?");
+            log.info("1. Hotel");
+            log.info("2. Apartamento");
             opc = ioUtility.readInt();
         }
         return opc == 1 ? AlojamientoTypeEnum.HOTEL : AlojamientoTypeEnum.APARTAMENTO;
@@ -74,21 +71,21 @@ public class GestionBOImpl implements IGestionBO {
         int opc = 0;
         IPayStrategy strategySelected;
         while (opc < 1 || opc > 3) {
-            System.out.println("Seleccione la estrategia por defecto de pagos del alojamiento:");
-            System.out.println("1. Transferencias.");
-            System.out.println("2. PayPal.");
-            System.out.println("3. Pagos con dispositivos móviles.");
+            log.info("Seleccione la estrategia por defecto de pagos del alojamiento:");
+            log.info("1. Transferencias.");
+            log.info("2. PayPal.");
+            log.info("3. Pagos con dispositivos móviles.");
             opc = ioUtility.readInt();
         }
-        if(opc == 1){
+        if (opc == 1) {
             strategySelected = new TransferenciaStrategy();
-        }else if(opc == 2){
+        } else if (opc == 2) {
             strategySelected = new PayPalStrategy();
-        }else{
+        } else {
             strategySelected = new MobilePayStrategy();
         }
         return strategySelected;
-           
+
     }
 
 }

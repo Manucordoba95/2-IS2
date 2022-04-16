@@ -15,6 +15,16 @@ public class Alojamiento extends ModelEntity{
     private IPayStrategy payStrategy;
 
    
+    public Alojamiento(){}
+    
+    public Alojamiento(String name, double price, boolean reserved, boolean busy, IPayStrategy payStrategy){
+        
+        this.name = name;
+        this.price = price;
+        this.reserved = reserved;
+        this.busy = busy;
+        this.payStrategy = payStrategy;
+    }
     /**
      * @return the name
      */

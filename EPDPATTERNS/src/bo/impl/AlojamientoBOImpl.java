@@ -20,7 +20,14 @@ public class AlojamientoBOImpl implements IBaseBO<Alojamiento> {
     @Override
     public Object findById(Long id) {
         log.infoCallMethod("findById");
-        return data.getAlojamientos().stream().filter(a -> a.getId().equals(id)).findFirst().get();
+        Optional<Alojamiento> opAlojamiento =  data.getAlojamientos().stream().filter(a -> a.getId().equals(id)).findFirst();
+        if(opAlojamiento.isPresent()){
+            return opAlojamiento.get();
+        }else{
+            log.error("No se ha encontrado ningún Alojamiento con id: "+id);
+            return null;
+        }
+           
     }
 
     @Override
@@ -38,7 +45,7 @@ public class AlojamientoBOImpl implements IBaseBO<Alojamiento> {
     public void createOrUpdate(Object object) {
         log.infoCallMethod("createOrUpdate");
         Alojamiento aux = (Alojamiento) object;
-        if (aux.getId() != null) {
+        if (aux.getId() != null && this.findById(aux.getId())!=null) {
             log.info("actualizamos el alojamiento con id:" + aux.getId());
             int index = data.getAlojamientos().indexOf(data.getAlojamientos().stream().filter(a -> a.getId().equals(aux.getId())).findAny().get());
             data.getAlojamientos().set(index, aux);

@@ -1,6 +1,5 @@
 package AlojamientoFactory;
 
-import model.Data;
 import singleton.Log;
 import strategy.bo.IPayStrategy;
 
@@ -10,13 +9,12 @@ import strategy.bo.IPayStrategy;
  */
 public class AlojamientoHotelFactoryImpl implements IAlojamientoFactory {
 
-    private Data data = Data.getInstance();
     private Log log = Log.getInstance(this.getClass());
-
+    
     @Override
     public void create(IPayStrategy payStrategy) {
-        System.out.println("Factoria creación de Hotel");
-        System.out.println(payStrategy.toString());
+        log.info("CREACIÓN DE HOTEL");
+        log.info("Introduzca el nombre del Hotel: ");
     }
 
     @Override

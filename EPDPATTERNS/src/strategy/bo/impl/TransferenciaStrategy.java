@@ -23,5 +23,4 @@ public class TransferenciaStrategy implements IPayStrategy {
         return "TransferenciaStrategy";
     }
 
-   
 }
