@@ -2,7 +2,7 @@ package bo.impl;
 
 import java.util.Optional;
 import model.Alojamiento;
-import model.Data;
+import singleton.Data;
 import singleton.Log;
 import bo.IBaseBO;
 import singleton.IOUtility;

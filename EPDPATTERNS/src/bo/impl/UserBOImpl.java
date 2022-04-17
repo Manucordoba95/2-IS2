@@ -1,6 +1,6 @@
 package bo.impl;
 
-import model.Data;
+import singleton.Data;
 import model.Usuario;
 import singleton.Log;
 import bo.IBaseBO;

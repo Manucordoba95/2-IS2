@@ -1,7 +1,10 @@
-package model;
+package singleton;
 
 import java.util.ArrayList;
 import java.util.List;
+import model.Alojamiento;
+import model.Reserva;
+import model.Usuario;
 import singleton.IOUtility;
 
 /**

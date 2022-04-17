@@ -1,5 +1,6 @@
 package AlojamientoFactory;
 
+import model.Alojamiento;
 import strategy.bo.IPayStrategy;
 
 /**
@@ -8,5 +9,5 @@ import strategy.bo.IPayStrategy;
  */
 public interface IAlojamientoFactory {
     public void create(IPayStrategy payStrategy);
-    public void calculatePrice();
+    public void calculatePrice(Alojamiento alojamiento);
 }

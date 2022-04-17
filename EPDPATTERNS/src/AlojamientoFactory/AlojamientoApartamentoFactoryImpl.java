@@ -1,6 +1,7 @@
 package AlojamientoFactory;
 
 import bo.impl.AlojamientoBOImpl;
+import model.Alojamiento;
 import model.Apartamento;
 
 import singleton.IOUtility;
@@ -18,7 +19,7 @@ public class AlojamientoApartamentoFactoryImpl implements IAlojamientoFactory {
 
     @Override
     public void create(IPayStrategy payStrategy) {
-        
+         log.infoCallMethod("create");
         log.info("Introduzca el nombre del Apartamento: ");
         String name = ioUtility.readString();
         log.info("Introduzca el precio del Apartamento por noche: ");
@@ -34,7 +35,8 @@ public class AlojamientoApartamentoFactoryImpl implements IAlojamientoFactory {
     }
 
     @Override
-    public void calculatePrice() {
+    public void calculatePrice(Alojamiento alojamiento) {
+        log.infoCallMethod("calculatePrice");
     }
 
 }

@@ -1,6 +1,5 @@
 package singleton;
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,7 +10,7 @@ import java.io.InputStreamReader;
  */
 public class IOUtility {
 
-    private static final IOUtility io = new IOUtility();
+    private static IOUtility io;
     private BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
     Log log = Log.getInstance(this.getClass());
 
@@ -19,7 +18,9 @@ public class IOUtility {
     }
 
     public static IOUtility getInstance() {
-
+        if (io == null) {
+            io = new IOUtility();
+        }
         return io;
     }
 

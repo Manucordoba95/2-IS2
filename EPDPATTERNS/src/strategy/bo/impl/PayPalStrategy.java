@@ -1,7 +1,7 @@
 package strategy.bo.impl;
 
 import model.Alojamiento;
-import model.Data;
+import singleton.Data;
 import singleton.Log;
 import strategy.bo.IPayStrategy;
 

@@ -1,5 +1,6 @@
 package AlojamientoFactory;
 
+import model.Alojamiento;
 import singleton.Log;
 import strategy.bo.IPayStrategy;
 
@@ -18,7 +19,7 @@ public class AlojamientoHotelFactoryImpl implements IAlojamientoFactory {
     }
 
     @Override
-    public void calculatePrice() {
+    public void calculatePrice(Alojamiento alojamiento) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
